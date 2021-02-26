@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_l_jhkHhMEeuzuKS1expDjA" name="ConnectorBdmGenerationDemo" author="laurent" bonitaVersion="7.12.1" bonitaModelVersion="7.12.0-004">
     <elements xmi:type="process:Pool" xmi:id="_l_jhkXhMEeuzuKS1expDjA" name="connectorBdmGenerationDemo">
       <elements xmi:type="process:Lane" xmi:id="_l_jhknhMEeuzuKS1expDjA" name="Employee lane" actor="_l_jhq3hMEeuzuKS1expDjA">
@@ -12,6 +12,49 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_l_jhmHhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_l_jhmXhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_l_jhmnhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
+          <data xmi:type="process:JavaObjectData" xmi:id="_slIVIHhREeuzuKS1expDjA" name="metaData" dataType="_l_jhwnhMEeuzuKS1expDjA" className="java.lang.Object">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_slIVIXhREeuzuKS1expDjA" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+          </data>
+          <data xmi:type="process:JavaObjectData" xmi:id="_ylPdcHhREeuzuKS1expDjA" name="model" dataType="_l_jhwnhMEeuzuKS1expDjA" className="java.lang.Object">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_ylPdcXhREeuzuKS1expDjA" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+          </data>
+          <data xmi:type="process:JavaObjectData" xmi:id="_6b-JIHhREeuzuKS1expDjA" name="bdmModel" dataType="_l_jhwnhMEeuzuKS1expDjA" className="org.bonitasoft.engine.bdm.model.BusinessObjectModel">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_6b-JIXhREeuzuKS1expDjA" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="org.bonitasoft.engine.bdm.model.BusinessObjectModel"/>
+          </data>
+          <connectors xmi:type="process:Connector" xmi:id="_64bboHhREeuzuKS1expDjA" name="bdm" definitionId="bdm-generation" event="ON_ENTER" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_64bboXhREeuzuKS1expDjA" definitionId="bdm-generation" version="1.0.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbonhREeuzuKS1expDjA" key="jdbcUrl">
+                <expression xmi:type="expression:Expression" xmi:id="_64bbo3hREeuzuKS1expDjA" name="jdbc:postgresql://localhost:5435/dvdrental" content="jdbc:postgresql://localhost:5435/dvdrental" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbpHhREeuzuKS1expDjA" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_64bbpXhREeuzuKS1expDjA" name="postgres" content="postgres" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbpnhREeuzuKS1expDjA" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_64bbp3hREeuzuKS1expDjA" name="example" content="example" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbqHhREeuzuKS1expDjA" key="driver">
+                <expression xmi:type="expression:Expression" xmi:id="_64bbqXhREeuzuKS1expDjA" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_64bbqnhREeuzuKS1expDjA">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_64bbq3hREeuzuKS1expDjA" name="metaData" content="metaData" type="TYPE_VARIABLE" returnType="java.lang.Object">
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_64bbrHhREeuzuKS1expDjA" name="metaData" dataType="_l_jhwnhMEeuzuKS1expDjA" className="java.lang.Object"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_64bbrXhREeuzuKS1expDjA" name="sqlMetadata" content="sqlMetadata" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_64bbrnhREeuzuKS1expDjA" name="sqlMetadata" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_64bbr3hREeuzuKS1expDjA" type="ASSIGNMENT"/>
+            </outputs>
+            <outputs xmi:type="expression:Operation" xmi:id="_64bbsHhREeuzuKS1expDjA">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_64bbsXhREeuzuKS1expDjA" name="bdmZip" content="bdmZip" type="DOCUMENT_REF_TYPE">
+                <referencedElements xmi:type="process:Document" xmi:id="_64bbsnhREeuzuKS1expDjA" name="bdmZip"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_64bbs3hREeuzuKS1expDjA" name="bdmZipFile" content="bdmZipFile" type="CONNECTOR_OUTPUT_TYPE" returnType="org.bonitasoft.engine.bpm.document.DocumentValue">
+                <referencedElements xmi:type="definition:Output" xmi:id="_64bbtHhREeuzuKS1expDjA" name="bdmZipFile" type="org.bonitasoft.engine.bpm.document.DocumentValue"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_64bbtXhREeuzuKS1expDjA" type="DOCUMENT_CREATE_UPDATE"/>
+            </outputs>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_l_jhm3hMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_l_jhnHhMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_l_jhnXhMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -33,14 +76,14 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_tyJUKHhMEeuzuKS1expDjA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_tyJUJ3hMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_uRGhCnhMEeuzuKS1expDjA">
-            <targetForm xmi:type="expression:Expression" xmi:id="_uRGhC3hMEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_CDnx0HhkEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_uRGhCXhMEeuzuKS1expDjA"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_uRGhDHhMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_l_jhpHhMEeuzuKS1expDjA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_l_jhpXhMEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_l_jhpHhMEeuzuKS1expDjA" type="NONE">
+        <targetForm xmi:type="expression:Expression" xmi:id="_xEf8EXhUEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_l_jhpnhMEeuzuKS1expDjA">
         <targetForm xmi:type="expression:Expression" xmi:id="_l_jhp3hMEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -58,7 +101,39 @@
         <condition xmi:type="expression:Expression" xmi:id="_vuK78nhMEeuzuKS1expDjA" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_l_jhq3hMEeuzuKS1expDjA" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_9bBUMHhREeuzuKS1expDjA" name="Qualification" version="7.12.0-004" username="walter.bates" password="bpm">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_9bBUP3hREeuzuKS1expDjA">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_9bBUQHhREeuzuKS1expDjA" name="Employee actor">
+            <groups xmi:type="actormapping:Groups" xmi:id="_9bBUQXhREeuzuKS1expDjA"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_9bBUQnhREeuzuKS1expDjA"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_9bBUQ3hREeuzuKS1expDjA">
+              <role>member</role>
+            </roles>
+            <users xmi:type="actormapping:Users" xmi:id="_9bBURHhREeuzuKS1expDjA"/>
+          </actorMapping>
+        </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_9bBUMXhREeuzuKS1expDjA" type="CONNECTOR" definitionId="bdm-generation" definitionVersion="1.0.0" implementationId="bdm-generation-impl" implementationVersion="1.0-SNAPSHOT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUMnhREeuzuKS1expDjA" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUM3hREeuzuKS1expDjA" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_9bBUNHhREeuzuKS1expDjA" id="bdm-generation-impl-1.0-SNAPSHOT">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_9bBUNXhREeuzuKS1expDjA" key="bdm-generation-impl -- 1.0-SNAPSHOT" value="connector-bdm-generation-1.0-SNAPSHOT.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_9bBUNnhREeuzuKS1expDjA" key="bdm-generation-impl -- 1.0-SNAPSHOT" value="guava-19.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_9bBUOHhREeuzuKS1expDjA" key="bdm-generation-impl -- 1.0-SNAPSHOT" value="HikariCP-3.4.5.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_9bBUOXhREeuzuKS1expDjA" key="bdm-generation-impl -- 1.0-SNAPSHOT" value="postgresql-42.2.5.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_9bBUOnhREeuzuKS1expDjA" key="bdm-generation-impl -- 1.0-SNAPSHOT" value="bdm-generation-impl-1.0-SNAPSHOT.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUO3hREeuzuKS1expDjA" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUPHhREeuzuKS1expDjA" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUPXhREeuzuKS1expDjA" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUPnhREeuzuKS1expDjA" id="OTHER"/>
+      </configurations>
       <contract xmi:type="process:Contract" xmi:id="_l_jhrHhMEeuzuKS1expDjA"/>
+      <documents xmi:type="process:Document" xmi:id="_vGYw8HhREeuzuKS1expDjA" name="bdmZip">
+        <mimeType xmi:type="expression:Expression" xmi:id="_vGYw8XhREeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
+        <url xmi:type="expression:Expression" xmi:id="_vGYw8nhREeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
+        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_vGYw83hREeuzuKS1expDjA" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
+      </documents>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_l_jhrXhMEeuzuKS1expDjA">
         <name xmi:type="expression:Expression" xmi:id="_l_jhrnhMEeuzuKS1expDjA" content="" returnTypeFixed="true"/>
         <value xmi:type="expression:Expression" xmi:id="_l_jhr3hMEeuzuKS1expDjA" content="" returnTypeFixed="true"/>
@@ -89,6 +164,7 @@
     <datatypes xmi:type="process:JavaType" xmi:id="_l_jhwnhMEeuzuKS1expDjA" name="Java_object"/>
     <datatypes xmi:type="process:XMLType" xmi:id="_l_jhw3hMEeuzuKS1expDjA" name="XML"/>
     <datatypes xmi:type="process:BusinessObjectType" xmi:id="_l_jhxHhMEeuzuKS1expDjA" name="Business_Object"/>
+    <datatypes xmi:type="process:EnumType" xmi:id="_4S48wHhREeuzuKS1expDjA" name="OptionList1"/>
   </process:MainProcess>
   <notation:Diagram xmi:id="_l_jhxXhMEeuzuKS1expDjA" type="Process" element="_l_jhkHhMEeuzuKS1expDjA" name="MyDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Node" xmi:id="_l_jhxnhMEeuzuKS1expDjA" type="2007" element="_l_jhkXhMEeuzuKS1expDjA">
