@@ -1,0 +1,158 @@
+@startuml
+
+package com.company.model {
+
+    class BdmActor {
+        +persistenceId : Long
+        +actorId : Long
+        +firstName : String
+        +lastName : String
+        +lastUpdate : LocalDateTime
+    }
+
+    class BdmAddress {
+        +persistenceId : Long
+        +address : String
+        +address2 : String
+        +addressId : Long
+        +district : String
+        +lastUpdate : LocalDateTime
+        +phone : String
+        +postalCode : String
+    }
+
+    class BdmCategory {
+        +persistenceId : Long
+        +categoryId : Long
+        +lastUpdate : LocalDateTime
+        +name : String
+    }
+
+    class BdmCity {
+        +persistenceId : Long
+        +city : String
+        +cityId : Long
+        +lastUpdate : LocalDateTime
+    }
+
+    class BdmCountry {
+        +persistenceId : Long
+        +country : String
+        +countryId : Long
+        +lastUpdate : LocalDateTime
+    }
+
+    class BdmCustomer {
+        +persistenceId : Long
+        +active : Long
+        +activebool : Boolean
+        +createDate : LocalDate
+        +customerId : Long
+        +email : String
+        +firstName : String
+        +lastName : String
+        +lastUpdate : LocalDateTime
+        +storeId : Integer
+    }
+
+    class BdmFilm {
+        +persistenceId : Long
+        +description : String
+        +filmId : Long
+        +fulltext : String
+        +lastUpdate : LocalDateTime
+        +length : Integer
+        +rating : String
+        +releaseYear : Long
+        +rentalDuration : Integer
+        +rentalRate : Float
+        +replacementCost : Float
+        +specialFeatures : List<String>
+        +title : String
+    }
+
+    class BdmFilmActor {
+        +persistenceId : Long
+        +lastUpdate : LocalDateTime
+    }
+
+    class BdmFilmCategory {
+        +persistenceId : Long
+        +lastUpdate : LocalDateTime
+    }
+
+    class BdmInventory {
+        +persistenceId : Long
+        +inventoryId : Long
+        +lastUpdate : LocalDateTime
+        +storeId : Integer
+    }
+
+    class BdmLanguage {
+        +persistenceId : Long
+        +languageId : Long
+        +lastUpdate : LocalDateTime
+        +name : String
+    }
+
+    class BdmPayment {
+        +persistenceId : Long
+        +amount : Float
+        +paymentDate : LocalDateTime
+        +paymentId : Long
+    }
+
+    class BdmRental {
+        +persistenceId : Long
+        +lastUpdate : LocalDateTime
+        +rentalDate : LocalDateTime
+        +rentalId : Long
+        +returnDate : LocalDateTime
+    }
+
+    class BdmStaff {
+        +persistenceId : Long
+        +active : Boolean
+        +email : String
+        +firstName : String
+        +lastName : String
+        +lastUpdate : LocalDateTime
+        +password : String
+        +picture : String
+        +staffId : Long
+        +storeId : Integer
+        +username : String
+    }
+
+    class BdmStore {
+        +persistenceId : Long
+        +lastUpdate : LocalDateTime
+        +storeId : Long
+    }
+
+}
+
+BdmAddress o--  BdmCity : cityObject
+BdmCity o--  BdmCountry : countryObject
+BdmCustomer o--  BdmAddress : addressObject
+BdmFilm o--  BdmLanguage : languageObject
+BdmFilmActor o--  BdmActor : actorObject
+BdmFilmActor o--  BdmFilm : filmObject
+BdmFilmCategory o--  BdmCategory : categoryObject
+BdmFilmCategory o--  BdmFilm : filmObject
+BdmInventory o--  BdmFilm : filmObject
+BdmPayment o--  BdmCustomer : customerObject
+BdmPayment o--  BdmRental : rentalObject
+BdmPayment o--  BdmStaff : staffObject
+BdmRental o--  BdmCustomer : customerObject
+BdmRental o--  BdmInventory : inventoryObject
+BdmRental o--  BdmStaff : staffObject
+BdmStaff o--  BdmAddress : addressObject
+BdmStore o--  BdmAddress : addressObject
+BdmStore o--  BdmStaff : managerStaffObject
+
+legend top left
+&#9830; Composition relation  &#9826; Aggregation relation  &#42; Multiple relation
+endlegend
+
+@enduml
