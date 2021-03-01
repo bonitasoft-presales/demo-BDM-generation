@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_l_jhkHhMEeuzuKS1expDjA" name="ConnectorBdmGenerationDemo" author="laurent" bonitaVersion="7.12.1" bonitaModelVersion="7.12.0-004">
-    <elements xmi:type="process:Pool" xmi:id="_l_jhkXhMEeuzuKS1expDjA" name="connectorBdmGenerationDemo">
+    <elements xmi:type="process:Pool" xmi:id="_l_jhkXhMEeuzuKS1expDjA" documentation="Demo process with BDM generation connector" name="connectorBdmGenerationDemo">
       <elements xmi:type="process:Lane" xmi:id="_l_jhknhMEeuzuKS1expDjA" name="Employee lane" actor="_l_jhq3hMEeuzuKS1expDjA">
         <elements xmi:type="process:StartEvent" xmi:id="_l_jhk3hMEeuzuKS1expDjA" name="Start1" outgoing="_l_jhqHhMEeuzuKS1expDjA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_l_jhlHhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_l_jhlXhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_l_jhlnhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:ServiceTask" xmi:id="_r23TMHhMEeuzuKS1expDjA" name="call connector" outgoing="_tyNlkHhMEeuzuKS1expDjA" incoming="_l_jhqHhMEeuzuKS1expDjA">
+        <elements xmi:type="process:ServiceTask" xmi:id="_r23TMHhMEeuzuKS1expDjA" documentation="Reads database and generate BDM zip file as a process document&#xA;" name="call connector" outgoing="_tyNlkHhMEeuzuKS1expDjA" incoming="_l_jhqHhMEeuzuKS1expDjA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_l_jhmHhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_l_jhmXhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_l_jhmnhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
@@ -24,16 +24,24 @@
           <connectors xmi:type="process:Connector" xmi:id="_64bboHhREeuzuKS1expDjA" name="bdm" definitionId="bdm-generation" event="ON_ENTER" definitionVersion="1.0.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_64bboXhREeuzuKS1expDjA" definitionId="bdm-generation" version="1.0.0" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbonhREeuzuKS1expDjA" key="jdbcUrl">
-                <expression xmi:type="expression:Expression" xmi:id="_64bbo3hREeuzuKS1expDjA" name="jdbc:postgresql://localhost:5435/dvdrental" content="jdbc:postgresql://localhost:5435/dvdrental" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_64bbo3hREeuzuKS1expDjA" name="jdbcUrl" content="jdbcUrl" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_EoyM8Hp3Eeur-7_XXlfihg" name="jdbcUrl" typeClassname="java.lang.String" description="jdbc:postgresql://localhost:5435/dvdrental"/>
+                </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbpHhREeuzuKS1expDjA" key="userName">
-                <expression xmi:type="expression:Expression" xmi:id="_64bbpXhREeuzuKS1expDjA" name="postgres" content="postgres" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_64bbpXhREeuzuKS1expDjA" name="jdbcUsername" content="jdbcUsername" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_EoyM8Xp3Eeur-7_XXlfihg" name="jdbcUsername" typeClassname="java.lang.String" description="postgres"/>
+                </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbpnhREeuzuKS1expDjA" key="password">
-                <expression xmi:type="expression:Expression" xmi:id="_64bbp3hREeuzuKS1expDjA" name="example" content="example" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_64bbp3hREeuzuKS1expDjA" name="jdbcPassword" content="jdbcPassword" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_Eoy0AHp3Eeur-7_XXlfihg" name="jdbcPassword" typeClassname="java.lang.String" description="example"/>
+                </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_64bbqHhREeuzuKS1expDjA" key="driver">
-                <expression xmi:type="expression:Expression" xmi:id="_64bbqXhREeuzuKS1expDjA" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_64bbqXhREeuzuKS1expDjA" name="jdbcDriver" content="jdbcDriver" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_Eoy0AXp3Eeur-7_XXlfihg" name="jdbcDriver" typeClassname="java.lang.String" description="org.postgresql.Driver"/>
+                </expression>
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_64bbqnhREeuzuKS1expDjA">
@@ -66,7 +74,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_siTc4HhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_siTc4nhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_uRGhAHhMEeuzuKS1expDjA" name="review" outgoing="_vuK78HhMEeuzuKS1expDjA" incoming="_tyNlkHhMEeuzuKS1expDjA" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_uRGhAHhMEeuzuKS1expDjA" documentation="Go to case overview to download zip file, them import it into Bonita studio&#xA;" name="review" outgoing="_vuK78HhMEeuzuKS1expDjA" incoming="_tyNlkHhMEeuzuKS1expDjA" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_tyJUInhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_tyJUIXhMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_tyJUI3hMEeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>
@@ -76,7 +84,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_tyJUKHhMEeuzuKS1expDjA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_tyJUJ3hMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_uRGhCnhMEeuzuKS1expDjA">
-            <targetForm xmi:type="expression:Expression" xmi:id="_CDnx0HhkEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_w49W4Hp3Eeur-7_XXlfihg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_uRGhCXhMEeuzuKS1expDjA"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_uRGhDHhMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -127,7 +135,15 @@
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUPHhREeuzuKS1expDjA" id="OTHER"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUPXhREeuzuKS1expDjA" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUPnhREeuzuKS1expDjA" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_E7MyoHp3Eeur-7_XXlfihg" name="jdbcUrl" value="jdbc:postgresql://localhost:5435/dvdrental&#xA;&#xA;" typeClassname="java.lang.String" description="jdbc:postgresql://localhost:5435/dvdrental"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_E7MyoXp3Eeur-7_XXlfihg" name="jdbcUsername" value="postgres" typeClassname="java.lang.String" description="postgres"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_E7Myonp3Eeur-7_XXlfihg" name="jdbcPassword" value="example" typeClassname="java.lang.String" description="example"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_E7Myo3p3Eeur-7_XXlfihg" name="jdbcDriver" value="org.postgresql.Driver" typeClassname="java.lang.String" description="org.postgresql.Driver"/>
       </configurations>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_7zEwgHp2Eeur-7_XXlfihg" name="jdbcUrl" typeClassname="java.lang.String" description="jdbc:postgresql://localhost:5435/dvdrental"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_-lIocHp2Eeur-7_XXlfihg" name="jdbcUsername" typeClassname="java.lang.String" description="postgres"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_Bo6igHp3Eeur-7_XXlfihg" name="jdbcPassword" typeClassname="java.lang.String" description="example"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_EPgKQHp3Eeur-7_XXlfihg" name="jdbcDriver" typeClassname="java.lang.String" description="org.postgresql.Driver"/>
       <contract xmi:type="process:Contract" xmi:id="_l_jhrHhMEeuzuKS1expDjA"/>
       <documents xmi:type="process:Document" xmi:id="_vGYw8HhREeuzuKS1expDjA" name="bdmZip">
         <mimeType xmi:type="expression:Expression" xmi:id="_vGYw8XhREeuzuKS1expDjA" name="" content="" returnTypeFixed="true"/>

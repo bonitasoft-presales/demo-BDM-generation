@@ -12,277 +12,97 @@ v7.12.1, {docdate}
 :hardbreaks:
 :experimental:
 
-== Business Data Model
+== Processes
 
-image::bdm.svg[link=images/bdm.svg]
+=== image:icons/Pool.png[title="Process"] [[_07362b66-85e1-3d27-8738-6c1723dd8baa]]connectorBdmGenerationDemo (1.0)
 
-=== Package com.company.model
+Demo process with BDM generation connector
 
-==== BdmActor
+image::processes/connectorBdmGenerationDemo-1.0.png[]
 
-_No description available_
+==== icon:users[] Actors
 
-===== icon:list[] Attributes
+[grid=cols,options="header",cols="1,3a",stripes=even,frame=topbot]
+|===
+|Name                                                                                               |Description                                                 
+|[[_9b810ac8-8ec0-3ba1-a5bd-7dc97196ac52]]Employee actor icon:play-circle[title="Process initiator"]|This is an example of actor that is mapped to any ACME users
+|===
+
+==== icon:cog[] Parameters
 
 [grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
 |===
-|Name                                    |Type         |Description
-|[[BdmActor.persistenceId]]persistenceId*|Long         |           
-|[[BdmActor.actorId]]actorId*            |Long         |           
-|[[BdmActor.firstName]]firstName*        |String       |           
-|[[BdmActor.lastName]]lastName*          |String       |           
-|[[BdmActor.lastUpdate]]lastUpdate*      |LocalDateTime|           
+|Name        |Type  |Description                               
+|jdbcUrl     |String|jdbc:postgresql://localhost:5435/dvdrental
+|jdbcUsername|String|postgres                                  
+|jdbcPassword|String|example                                   
+|jdbcDriver  |String|org.postgresql.Driver                     
 |===
 
-==== BdmAddress
+==== icon:file[] Documents
+
+[grid=cols,options="header",cols="1,3a",stripes=even,frame=topbot]
+|===
+|Name                                           |Description
+|[[_b99e1e96-fac7-30f2-9349-7d5d40fa65ac]]bdmZip|           
+|===
+
+==== image:icons/Lane.png[title="Lane"] Employee lane (<<_9b810ac8-8ec0-3ba1-a5bd-7dc97196ac52,icon:user[title="Actor"] Employee actor>>)
 
 _No description available_
 
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                        |Type         |Description
-|[[BdmAddress.persistenceId]]persistenceId*  |Long         |           
-|[[BdmAddress.address]]address*              |String       |           
-|[[BdmAddress.address2]]address2             |String       |           
-|[[BdmAddress.addressId]]addressId*          |Long         |           
-|[[BdmAddress.district]]district*            |String       |           
-|[[BdmAddress.lastUpdate]]lastUpdate*        |LocalDateTime|           
-|[[BdmAddress.phone]]phone*                  |String       |           
-|[[BdmAddress.postalCode]]postalCode         |String       |           
-|[[BdmAddress.cityObject]]&#x25c7; cityObject|<<BdmCity>>  |           
-|===
-
-==== BdmCategory
+==== [[_6bf0735f-c2a0-3b51-b30e-a48f8383a3b6]]image:icons/StartEvent.png[title="StartEvent"] Start1
 
 _No description available_
 
-===== icon:list[] Attributes
+===== icon:arrow-right[] Outgoing transition(s)
 
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                       |Type         |Description
-|[[BdmCategory.persistenceId]]persistenceId*|Long         |           
-|[[BdmCategory.categoryId]]categoryId*      |Long         |           
-|[[BdmCategory.lastUpdate]]lastUpdate*      |LocalDateTime|           
-|[[BdmCategory.name]]name*                  |String       |           
-|===
+*To <<_0fd398fa-664b-3f54-8f2f-306dc6098861,call connector>>*
 
-==== BdmCity
+==== [[_0fd398fa-664b-3f54-8f2f-306dc6098861]]image:icons/ServiceTask.png[title="ServiceTask"] call connector
 
-_No description available_
+Reads database and generate BDM zip file as a process document
 
-===== icon:list[] Attributes
 
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                           |Type          |Description
-|[[BdmCity.persistenceId]]persistenceId*        |Long          |           
-|[[BdmCity.city]]city*                          |String        |           
-|[[BdmCity.cityId]]cityId*                      |Long          |           
-|[[BdmCity.lastUpdate]]lastUpdate*              |LocalDateTime |           
-|[[BdmCity.countryObject]]&#x25c7; countryObject|<<BdmCountry>>|           
-|===
+*Previous flow element(s)*: <<_6bf0735f-c2a0-3b51-b30e-a48f8383a3b6,Start1>>
 
-==== BdmCountry
+===== icon:plug[] Connectors in
 
-_No description available_
+*bdm-generation: bdm*
 
-===== icon:list[] Attributes
+===== icon:arrow-right[] Outgoing transition(s)
 
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                      |Type         |Description
-|[[BdmCountry.persistenceId]]persistenceId*|Long         |           
-|[[BdmCountry.country]]country*            |String       |           
-|[[BdmCountry.countryId]]countryId*        |Long         |           
-|[[BdmCountry.lastUpdate]]lastUpdate*      |LocalDateTime|           
-|===
+*To <<_ac394ea5-9d7e-3d9f-aca1-c574187973e6,review>>*
 
-==== BdmCustomer
+==== [[_ac394ea5-9d7e-3d9f-aca1-c574187973e6]]image:icons/Task.png[title="Task"] review
+
+Go to case overview to download zip file, them import it into Bonita studio
+
+
+*Previous flow element(s)*: <<_0fd398fa-664b-3f54-8f2f-306dc6098861,call connector>>
+
+[CAUTION]
+====
+Invalid form mapping. No form specified.
+====
+
+===== icon:arrow-right[] Outgoing transition(s)
+
+*To <<_3700537a-8487-3fa9-a2fe-a76d55ee364b,End1>>*
+
+==== [[_3700537a-8487-3fa9-a2fe-a76d55ee364b]]image:icons/EndEvent.png[title="EndEvent"] End1
 
 _No description available_
 
-===== icon:list[] Attributes
+*Previous flow element(s)*: <<_ac394ea5-9d7e-3d9f-aca1-c574187973e6,review>>
 
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                               |Type          |Description
-|[[BdmCustomer.persistenceId]]persistenceId*        |Long          |           
-|[[BdmCustomer.active]]active                       |Long          |           
-|[[BdmCustomer.activebool]]activebool*              |Boolean       |           
-|[[BdmCustomer.createDate]]createDate*              |LocalDate     |           
-|[[BdmCustomer.customerId]]customerId*              |Long          |           
-|[[BdmCustomer.email]]email                         |String        |           
-|[[BdmCustomer.firstName]]firstName*                |String        |           
-|[[BdmCustomer.lastName]]lastName*                  |String        |           
-|[[BdmCustomer.lastUpdate]]lastUpdate               |LocalDateTime |           
-|[[BdmCustomer.storeId]]storeId*                    |Integer       |           
-|[[BdmCustomer.addressObject]]&#x25c7; addressObject|<<BdmAddress>>|           
-|===
+== Diagrams
 
-==== BdmFilm
+=== ConnectorBdmGenerationDemo (1.0)
 
 _No description available_
 
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                             |Type           |Description                                 
-|[[BdmFilm.persistenceId]]persistenceId*          |Long           |                                            
-|[[BdmFilm.description]]description               |String         |                                            
-|[[BdmFilm.filmId]]filmId*                        |Long           |                                            
-|[[BdmFilm.fulltext]]fulltext*                    |String         |                                            
-|[[BdmFilm.lastUpdate]]lastUpdate*                |LocalDateTime  |                                            
-|[[BdmFilm.length]]length                         |Integer        |                                            
-|[[BdmFilm.rating]]rating                         |String         |USER-DEFINED type converted to String(255)  
-|[[BdmFilm.releaseYear]]releaseYear               |Long           |                                            
-|[[BdmFilm.rentalDuration]]rentalDuration*        |Integer        |                                            
-|[[BdmFilm.rentalRate]]rentalRate*                |Float          |numeric type converted to Float             
-|[[BdmFilm.replacementCost]]replacementCost*      |Float          |numeric type converted to Float             
-|[[BdmFilm.specialFeatures]]specialFeatures       |List<String>   |ARRAY type converted to multiple String(255)
-|[[BdmFilm.title]]title*                          |String         |                                            
-|[[BdmFilm.languageObject]]&#x25c7; languageObject|<<BdmLanguage>>|                                            
-|===
-
-==== BdmFilmActor
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                            |Type         |Description
-|[[BdmFilmActor.persistenceId]]persistenceId*    |Long         |           
-|[[BdmFilmActor.lastUpdate]]lastUpdate*          |LocalDateTime|           
-|[[BdmFilmActor.actorObject]]&#x25c7; actorObject|<<BdmActor>> |           
-|[[BdmFilmActor.filmObject]]&#x25c7; filmObject  |<<BdmFilm>>  |           
-|===
-
-==== BdmFilmCategory
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                                     |Type           |Description
-|[[BdmFilmCategory.persistenceId]]persistenceId*          |Long           |           
-|[[BdmFilmCategory.lastUpdate]]lastUpdate*                |LocalDateTime  |           
-|[[BdmFilmCategory.categoryObject]]&#x25c7; categoryObject|<<BdmCategory>>|           
-|[[BdmFilmCategory.filmObject]]&#x25c7; filmObject        |<<BdmFilm>>    |           
-|===
-
-==== BdmInventory
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                          |Type         |Description
-|[[BdmInventory.persistenceId]]persistenceId*  |Long         |           
-|[[BdmInventory.inventoryId]]inventoryId*      |Long         |           
-|[[BdmInventory.lastUpdate]]lastUpdate*        |LocalDateTime|           
-|[[BdmInventory.storeId]]storeId*              |Integer      |           
-|[[BdmInventory.filmObject]]&#x25c7; filmObject|<<BdmFilm>>  |           
-|===
-
-==== BdmLanguage
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                       |Type         |Description
-|[[BdmLanguage.persistenceId]]persistenceId*|Long         |           
-|[[BdmLanguage.languageId]]languageId*      |Long         |           
-|[[BdmLanguage.lastUpdate]]lastUpdate*      |LocalDateTime|           
-|[[BdmLanguage.name]]name*                  |String       |           
-|===
-
-==== BdmPayment
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                                |Type           |Description                    
-|[[BdmPayment.persistenceId]]persistenceId*          |Long           |                               
-|[[BdmPayment.amount]]amount*                        |Float          |numeric type converted to Float
-|[[BdmPayment.paymentDate]]paymentDate*              |LocalDateTime  |                               
-|[[BdmPayment.paymentId]]paymentId*                  |Long           |                               
-|[[BdmPayment.customerObject]]&#x25c7; customerObject|<<BdmCustomer>>|                               
-|[[BdmPayment.rentalObject]]&#x25c7; rentalObject    |<<BdmRental>>  |                               
-|[[BdmPayment.staffObject]]&#x25c7; staffObject      |<<BdmStaff>>   |                               
-|===
-
-==== BdmRental
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                                 |Type            |Description
-|[[BdmRental.persistenceId]]persistenceId*            |Long            |           
-|[[BdmRental.lastUpdate]]lastUpdate*                  |LocalDateTime   |           
-|[[BdmRental.rentalDate]]rentalDate*                  |LocalDateTime   |           
-|[[BdmRental.rentalId]]rentalId*                      |Long            |           
-|[[BdmRental.returnDate]]returnDate                   |LocalDateTime   |           
-|[[BdmRental.customerObject]]&#x25c7; customerObject  |<<BdmCustomer>> |           
-|[[BdmRental.inventoryObject]]&#x25c7; inventoryObject|<<BdmInventory>>|           
-|[[BdmRental.staffObject]]&#x25c7; staffObject        |<<BdmStaff>>    |           
-|===
-
-==== BdmStaff
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                            |Type          |Description                              
-|[[BdmStaff.persistenceId]]persistenceId*        |Long          |                                         
-|[[BdmStaff.active]]active*                      |Boolean       |                                         
-|[[BdmStaff.email]]email                         |String        |                                         
-|[[BdmStaff.firstName]]firstName*                |String        |                                         
-|[[BdmStaff.lastName]]lastName*                  |String        |                                         
-|[[BdmStaff.lastUpdate]]lastUpdate*              |LocalDateTime |                                         
-|[[BdmStaff.password]]password                   |String        |                                         
-|[[BdmStaff.picture]]picture                     |String        |bytea (byte array) type converted to TEXT
-|[[BdmStaff.staffId]]staffId*                    |Long          |                                         
-|[[BdmStaff.storeId]]storeId*                    |Integer       |                                         
-|[[BdmStaff.username]]username*                  |String        |                                         
-|[[BdmStaff.addressObject]]&#x25c7; addressObject|<<BdmAddress>>|                                         
-|===
-
-==== BdmStore
-
-_No description available_
-
-===== icon:list[] Attributes
-
-[grid=cols,options="header",cols="1,1e,3a",stripes=even,frame=topbot]
-|===
-|Name                                                      |Type          |Description
-|[[BdmStore.persistenceId]]persistenceId*                  |Long          |           
-|[[BdmStore.lastUpdate]]lastUpdate*                        |LocalDateTime |           
-|[[BdmStore.storeId]]storeId*                              |Long          |           
-|[[BdmStore.addressObject]]&#x25c7; addressObject          |<<BdmAddress>>|           
-|[[BdmStore.managerStaffObject]]&#x25c7; managerStaffObject|<<BdmStaff>>  |           
-|===
+image::diagrams/ConnectorBdmGenerationDemo-1.0.png[]
 
 == Organization
 
