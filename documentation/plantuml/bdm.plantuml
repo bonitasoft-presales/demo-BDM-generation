@@ -67,7 +67,7 @@ package com.company.model {
         +rentalDuration : Integer
         +rentalRate : Float
         +replacementCost : Float
-        +specialFeatures : List<String>
+        +specialFeatures : String
         +title : String
     }
 
