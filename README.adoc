@@ -12,6 +12,522 @@ v7.12.1, {docdate}
 :hardbreaks:
 :experimental:
 
+== Applications
+
+=== Bonita Administrator Application (1.0)
+
+_No description available_
+
+[horizontal]
+Profile:: <<_080d4ce6-9f34-37f2-a270-2edb021a60ec,icon:user[title="Profile"] Administrator>>
+URL:: ../apps/adminAppSP
+Home page:: <<_dc60b75f-c8c2-3ac1-918b-6c30d20fe36e,custompage_adminMonitoringBonita>>
+
+==== Look and Feel
+
+[grid=cols,options="",cols="1,2",stripes=even,frame=topbot]
+|===
+|Layout|custompage_BonitaLayoutV6
+|Theme |custompage_themeBonita   
+|===
+
+==== Pages
+
+===== Navigation
+
+[grid=cols,options="header",cols="2a,1",stripes=even,frame=topbot]
+|===
+|Menu                               |Application Page                                                                  
+|menu:BPM[Monitoring]               |<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminMonitoringBonita>>        
+|menu:BPM[Processes]                |<<_6ec77aa9-2c2c-3211-b693-ba9a73451fa9,Bonita Admin Process List>>               
+|menu:BPM[Cases]                    |<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminCaseListBonita>>          
+|menu:BPM[Tasks]                    |<<_8a9da43b-98cd-38a8-be47-3bdc87d4a5cf,Bonita Admin Task List>>                  
+|menu:Organization[Users]           |<<_b44361dd-f77d-3d65-a5a1-c9e8d581bf0e,Bonita Admin User List>>                  
+|menu:Organization[Groups]          |<<_23f2972a-d60b-33a2-96ae-3ca35456e4a6,Bonita Admin Group List>>                 
+|menu:Organization[Roles]           |<<_a71f2ff0-42e6-32af-8939-23e2529da709,Bonita Admin Role List>>                  
+|menu:Organization[Install / Export]|<<_a3ecfa84-a2fc-3bf8-8bcd-c538acf6f595,Bonita Admin Install Export Organization>>
+|menu:Organization[Profiles]        |<<_612d38ff-f641-3f9b-b729-cb0128beb4f8,Bonita Admin Profile List>>               
+|BDM                                |<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminBDMBonita>>               
+|Resources                          |<<_5fd8ff70-062d-3484-8cdb-92eb451e69fe,Bonita Admin Resource List>>              
+|Applications                       |<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminApplicationListBonita>>   
+|License                            |<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminLicenseBonita>>           
+|===
+
+===== Orphan pages
+
+[grid=cols,options="header",cols="",stripes=even,frame=topbot]
+|===
+|Application Page                                                                  
+|<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminUserDetailsBonita>>       
+|<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminProcessDetailsBonita>>    
+|<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminProcessVisuBonita>>       
+|<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminCaseVisuBonita>>          
+|<<_606c2823-c34b-38dc-86c5-00332e702fec,Bonita Admin Case Details>>               
+|<<_fd57b185-dbbc-31e0-828e-15e8cc13f2d3,Bonita Admin Task Details>>               
+|<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_adminApplicationDetailsBonita>>
+|===
+
+=== Bonita User Application (2.1)
+
+_No description available_
+
+[horizontal]
+Profile:: <<_1300bb05-3afe-3c2d-af8b-543b4fb16c32,icon:user[title="Profile"] User>>
+URL:: ../apps/userApp
+Home page:: <<_e9a08a4b-3e0e-308b-8cec-ee36383ecf3b,custompage_tasklist>>
+
+==== Look and Feel
+
+[grid=cols,options="",cols="1,2",stripes=even,frame=topbot]
+|===
+|Layout|custompage_BonitaLayoutV6
+|Theme |custompage_themeBonita   
+|===
+
+==== Pages
+
+===== Navigation
+
+[grid=cols,options="header",cols="2a,1",stripes=even,frame=topbot]
+|===
+|Menu     |Application Page                                                      
+|Tasks    |<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_tasklist>>         
+|Cases    |<<_2be2f33c-4eb1-3239-916a-c1a3fc3b92f5,Bonita User Case List>>       
+|Processes|<<_680592a5-22b4-3f1d-b455-32ed9f87c34e,custompage_processlistBonita>>
+|===
+
+===== Orphan pages
+
+[grid=cols,options="header",cols="",stripes=even,frame=topbot]
+|===
+|Application Page                                                 
+|<<_b0e93a0c-0c89-39d7-b10e-3628f985a745,UserCaseDetailsBonitaV1>>
+|===
+
+== Application pages
+
+=== [[_b0e93a0c-0c89-39d7-b10e-3628f985a745]]image:icons/page.png[] UserCaseDetailsBonitaV1
+
+This page provides the detail information of a case. It is dedicated to User-like profiles. You can export it and edit it in the UI Designer. This page can only be used as an orphan page as it needs an 'id' parameter to display some content.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type  |Label                                                                   |Description
+|Link  |                                                                        |           
+|Link  |                                                                        |           
+|Title |                                                                        |           
+|Title |                                                                        |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Link  |                                                                        |           
+|Title |                                                                        |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Title |                                                                        |           
+|Input |Default label                                                           |           
+|Button|<i class="glyphicon glyphicon-plus"></i> {{"Add comment" \| uiTranslate}}|           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|Title |                                                                        |           
+|Text  |Default label                                                           |           
+|Text  |Default label                                                           |           
+|===
+
+=== [[_2be2f33c-4eb1-3239-916a-c1a3fc3b92f5]]image:icons/page.png[] Bonita User Case List (UserCaseListBonitaV3)
+
+This page lists all the cases a user is involved in. It is dedicated to User-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type         |Label  |Description
+|Title        |       |           
+|Input        |Case ID|           
+|Link         |       |           
+|TabsContainer|       |           
+|===
+
+=== [[_606c2823-c34b-38dc-86c5-00332e702fec]]image:icons/page.png[] Bonita Admin Case Details (adminCaseDetailsBonitaV2)
+
+This page provides the detail information of a case. It is dedicated to Admin-like profiles. You can export it and edit it in the UI Designer. This page can only be used as an orphan page as it needs an 'id' parameter to display some content.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label        |Description
+|Link          |             |           
+|Link          |             |           
+|Title         |             |           
+|Title         |             |           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Title         |             |           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Text          |Default label|           
+|Title         |             |           
+|Text          |Default label|           
+|Link          |             |           
+|Text          |Default label|           
+|TabsContainer |             |           
+|Text          |Default label|           
+|Text          |Default label|           
+|ModalContainer|             |           
+|===
+
+=== [[_23f2972a-d60b-33a2-96ae-3ca35456e4a6]]image:icons/page.png[] Bonita Admin Group List (adminGroupListBonitaV1)
+
+This page provides the list of a group. It is dedicated to Admin-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                                                        |Description
+|Title         |                                                                                             |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Create" \| uiTranslate}}                          |           
+|Select        |Select                                                                                       |           
+|Input         |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Text          |Default label                                                                                |           
+|Button        |<i class="glyphicon glyphicon-th-list" title="{{"View sub-groups" \| uiTranslate}}"/></i>     |           
+|Button        |<i class="glyphicon glyphicon-user" title="{{"View users in the group" \| uiTranslate}}"/></i>|           
+|Button        |<i class="glyphicon glyphicon-pencil" title="{{"Edit group" \| uiTranslate}}"/></i>           |           
+|Button        |<i class="glyphicon glyphicon-trash" title="{{"Delete group" \| uiTranslate}}"/></i>          |           
+|Text          |Default label                                                                                |           
+|Title         |                                                                                             |           
+|Button        |Load more groups                                                                             |           
+|ModalContainer|                                                                                             |           
+|ModalContainer|                                                                                             |           
+|ModalContainer|                                                                                             |           
+|ModalContainer|                                                                                             |           
+|ModalContainer|                                                                                             |           
+|===
+
+=== [[_a3ecfa84-a2fc-3bf8-8bcd-c538acf6f595]]image:icons/page.png[] Bonita Admin Install Export Organization (adminInstallExportOrganizationBonitaV1)
+
+This page is dedicated to Administrator-like profiles. It allows to install or export the .xml file of an organization. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type  |Label                    |Description
+|Title |                         |           
+|Title |                         |           
+|Upload|Default label            |           
+|Text  |                         |           
+|Text  |                         |           
+|Text  |                         |           
+|Text  |                         |           
+|Text  |                         |           
+|Text  |Default label            |           
+|Button|{{'Install' \| translate}}|           
+|Title |                         |           
+|Link  |                         |           
+|===
+
+=== [[_6ec77aa9-2c2c-3211-b693-ba9a73451fa9]]image:icons/page.png[] Bonita Admin Process List (adminProcessListBonitaV1)
+
+This page lists all the processes. It is dedicated to Admin-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                               |Description
+|Title         |                                                                    |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Install" \| uiTranslate}}|           
+|TabsContainer |                                                                    |           
+|ModalContainer|                                                                    |           
+|ModalContainer|                                                                    |           
+|===
+
+=== [[_612d38ff-f641-3f9b-b729-cb0128beb4f8]]image:icons/page.png[] Bonita Admin Profile List (adminProfileListBonitaV1)
+
+This page provides the list of a profiles. It is dedicated to Admin-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                                                                                                                                                  |Description
+|Title         |                                                                                                                                                                                       |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Add" \| uiTranslate}}                                                                                                                       |           
+|Select        |Select                                                                                                                                                                                 |           
+|Input         |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Button        |<i class="glyphicon glyphicon-triangle-top" title="{{"Hide mapping with organization" \| uiTranslate}}"></i>                                                                            |           
+|Button        |<i class="glyphicon glyphicon-triangle-bottom" title="{{"Show mapping with organization" \| uiTranslate}}"></i>                                                                         |           
+|Button        |<i class="glyphicon glyphicon-pencil" title="{{"Edit profile" \| uiTranslate}}"></i>                                                                                                    |           
+|Link          |                                                                                                                                                                                       |           
+|Button        |<i class="glyphicon glyphicon-trash" title="{{"Delete profile" \| uiTranslate}}"/></i>                                                                                                  |           
+|Button        |<i class="glyphicon glyphicon-triangle-top" title="{{"Hide mapping with organization" \| uiTranslate}}"></i>                                                                            |           
+|Button        |<i class="glyphicon glyphicon-triangle-bottom" title="{{"Show mapping with organization" \| uiTranslate}}"></i>                                                                         |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Image         |                                                                                                                                                                                       |           
+|Text          |Default label                                                                                                                                                                          |           
+|Button        |<span class="mapping-label">{{"Mapping with Users"\| uiTranslate}}</span>  <i class="glyphicon glyphicon-pencil btn-link" title="{{"Edit user mapping" \| uiTranslate}}"></i>            |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Button        |<span class="mapping-label">{{"Mapping with Groups"\| uiTranslate}}</span>  <i class="glyphicon glyphicon-pencil btn-link" title="{{"Edit group mapping" \| uiTranslate}}"></i>          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Button        |<span class="mapping-label">{{"Mapping with Roles"\| uiTranslate}}</span>  <i class="glyphicon glyphicon-pencil btn-link" title="{{"Edit role mapping" \| uiTranslate}}"></i>            |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Button        |<span class="mapping-label">{{"Mapping with Memberships"\| uiTranslate}}</span>  <i class="glyphicon glyphicon-pencil btn-link" title="{{"Edit membership mapping" \| uiTranslate}}"></i>|           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Text          |Default label                                                                                                                                                                          |           
+|Title         |                                                                                                                                                                                       |           
+|Button        |Load more profiles                                                                                                                                                                     |           
+|ModalContainer|                                                                                                                                                                                       |           
+|ModalContainer|                                                                                                                                                                                       |           
+|ModalContainer|                                                                                                                                                                                       |           
+|ModalContainer|                                                                                                                                                                                       |           
+|ModalContainer|                                                                                                                                                                                       |           
+|ModalContainer|                                                                                                                                                                                       |           
+|ModalContainer|                                                                                                                                                                                       |           
+|===
+
+=== [[_5fd8ff70-062d-3484-8cdb-92eb451e69fe]]image:icons/page.png[] Bonita Admin Resource List (adminResourceListBonitaV1)
+
+This page allows to manage UI resources of an application. It is dedicated to Administrator-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                                                         |Description
+|Title         |                                                                                              |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Install"\|uiTranslate}}                            |           
+|Select        |Select                                                                                        |           
+|Select        |Select                                                                                        |           
+|Input         |Default label                                                                                 |           
+|Checkbox      |hide provided resources                                                                       |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Text          |Default label                                                                                 |           
+|Button        |<i class="glyphicon glyphicon-pencil" {{installCtrl.isProvidedTooltip($item.isProvided)}}></i>|           
+|Link          |                                                                                              |           
+|Button        |<i class="glyphicon glyphicon-trash" {{installCtrl.isProvidedTooltip($item.isProvided)}}></i> |           
+|Text          |Default label                                                                                 |           
+|Image         |                                                                                              |           
+|Text          |Default label                                                                                 |           
+|Title         |                                                                                              |           
+|Button        |Load more resources                                                                           |           
+|ModalContainer|                                                                                              |           
+|ModalContainer|                                                                                              |           
+|ModalContainer|                                                                                              |           
+|===
+
+=== [[_a71f2ff0-42e6-32af-8939-23e2529da709]]image:icons/page.png[] Bonita Admin Role List (adminRoleListBonitaV1)
+
+Page allowing to list all the roles for admin profile
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                                                                           |Description
+|Title         |                                                                                                                |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Create" \| uiTranslate}}                                             |           
+|Select        |Select                                                                                                          |           
+|Input         |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Text          |Default label                                                                                                   |           
+|Button        |<i class="glyphicon glyphicon-user" title="{{"View the list of users mapped to this role" \| uiTranslate}}"/></i>|           
+|Button        |<i class="glyphicon glyphicon-pencil" title="{{"Edit role details" \| uiTranslate}}"/></i>                       |           
+|Button        |<i class="glyphicon glyphicon-trash" title="{{"Delete role" \| uiTranslate}}"/></i>                              |           
+|Text          |Default label                                                                                                   |           
+|Title         |                                                                                                                |           
+|Button        |Load more roles                                                                                                 |           
+|ModalContainer|                                                                                                                |           
+|ModalContainer|                                                                                                                |           
+|ModalContainer|                                                                                                                |           
+|ModalContainer|                                                                                                                |           
+|===
+
+=== [[_fd57b185-dbbc-31e0-828e-15e8cc13f2d3]]image:icons/page.png[] Bonita Admin Task Details (adminTaskDetailsBonitaV1)
+
+This page provides the detail information of a task. It is dedicated to Admin-like profiles. You can export it and edit it in the UI Designer. This page can only be used as an orphan page as it needs an 'id' parameter to display some content.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                                                                                           |Description
+|Link          |                                                                                                                                |           
+|Button        |Assign                                                                                                                          |           
+|Button        |Unassign                                                                                                                        |           
+|Button        |{{doForTaskCtrl.getUnassignedTaskTooltip()}}                                                                                    |           
+|Button        |Skip                                                                                                                            |           
+|Button        |Replay                                                                                                                          |           
+|Title         |                                                                                                                                |           
+|Title         |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Link          |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Title         |                                                                                                                                |           
+|Title         |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Button        |{{$item.name}} <i class="glyphicon glyphicon-info-sign text-danger" title="{{'Click here for more details' \| uiTranslate}}"></i>|           
+|Text          |Default label                                                                                                                   |           
+|Title         |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Title         |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Title         |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Title         |                                                                                                                                |           
+|Input         |Default label                                                                                                                   |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Add comment" \| uiTranslate}}                                                        |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|Title         |                                                                                                                                |           
+|Text          |Default label                                                                                                                   |           
+|Text          |Default label                                                                                                                   |           
+|ModalContainer|                                                                                                                                |           
+|ModalContainer|                                                                                                                                |           
+|ModalContainer|                                                                                                                                |           
+|ModalContainer|                                                                                                                                |           
+|ModalContainer|                                                                                                                                |           
+|ModalContainer|                                                                                                                                |           
+|===
+
+=== [[_8a9da43b-98cd-38a8-be47-3bdc87d4a5cf]]image:icons/page.png[] Bonita Admin Task List (adminTaskListBonitaV1)
+
+This page lists all the tasks. It is dedicated to Admin-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type         |Label        |Description
+|Title        |             |           
+|Text         |Default label|           
+|Input        |Case ID      |           
+|TabsContainer|             |           
+|===
+
+=== [[_b44361dd-f77d-3d65-a5a1-c9e8d581bf0e]]image:icons/page.png[] Bonita Admin User List (adminUserListBonitaV1)
+
+This page allows to manage the users. It is dedicated to Administrator-like profiles. You can export it and edit it in the UI Designer.
+
+.Widgets
+[caption=,grid=cols,options="header",cols="1,2,4a",stripes=even,frame=topbot]
+|===
+|Type          |Label                                                              |Description
+|Title         |                                                                   |           
+|Button        |<i class="glyphicon glyphicon-plus"></i> {{"Create" \| uiTranslate}}|           
+|Select        |Select                                                             |           
+|Input         |Default label                                                      |           
+|RadioButtons  |                                                                   |           
+|Text          |Default label                                                      |           
+|Text          |Default label                                                      |           
+|Text          |Default label                                                      |           
+|Text          |Default label                                                      |           
+|Text          |Default label                                                      |           
+|Text          |Default label                                                      |           
+|Link          |                                                                   |           
+|Button        |{{userListCtrl.getUserStatusIcon($item.enabled)}}                  |           
+|Text          |Default label                                                      |           
+|Title         |                                                                   |           
+|Button        |Load more users                                                    |           
+|ModalContainer|                                                                   |           
+|ModalContainer|                                                                   |           
+|===
+
 == Processes
 
 === image:icons/Pool.png[title="Process"] [[_07362b66-85e1-3d27-8738-6c1723dd8baa]]connectorBdmGenerationDemo (1.0)
@@ -80,11 +596,6 @@ Go to case overview to download zip file, them import it into Bonita studio
 
 
 *Previous flow element(s)*: <<_0fd398fa-664b-3f54-8f2f-306dc6098861,call connector>>
-
-[CAUTION]
-====
-Invalid form mapping. No form specified.
-====
 
 ===== icon:arrow-right[] Outgoing transition(s)
 
