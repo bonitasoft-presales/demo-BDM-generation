@@ -35,15 +35,6 @@
                 </expression>
               </parameters>
             </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_64bbqnhREeuzuKS1expDjA">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_64bbq3hREeuzuKS1expDjA" name="metaData" content="metaData" type="TYPE_VARIABLE" returnType="java.lang.Object">
-                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_64bbrHhREeuzuKS1expDjA" name="metaData" dataType="_l_jhwnhMEeuzuKS1expDjA" className="java.lang.Object"/>
-              </leftOperand>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_64bbrXhREeuzuKS1expDjA" name="sqlMetadata" content="sqlMetadata" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_64bbrnhREeuzuKS1expDjA" name="sqlMetadata" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_64bbr3hREeuzuKS1expDjA" type="ASSIGNMENT"/>
-            </outputs>
             <outputs xmi:type="expression:Operation" xmi:id="_64bbsHhREeuzuKS1expDjA">
               <leftOperand xmi:type="expression:Expression" xmi:id="_64bbsXhREeuzuKS1expDjA" name="bdmZip" content="bdmZip" type="DOCUMENT_REF_TYPE">
                 <referencedElements xmi:type="process:Document" xmi:id="_64bbsnhREeuzuKS1expDjA" name="bdmZip"/>
@@ -81,9 +72,6 @@
           <expectedDuration xmi:type="expression:Expression" xmi:id="_uRGhDHhMEeuzuKS1expDjA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <data xmi:type="process:JavaObjectData" xmi:id="_slIVIHhREeuzuKS1expDjA" name="metaData" dataType="_l_jhwnhMEeuzuKS1expDjA" className="java.lang.Object">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_slIVIXhREeuzuKS1expDjA" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
-      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_l_jhpHhMEeuzuKS1expDjA" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_xEf8EXhUEeuzuKS1expDjA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
@@ -114,21 +102,21 @@
             <users xmi:type="actormapping:Users" xmi:id="_9bBURHhREeuzuKS1expDjA"/>
           </actorMapping>
         </actorMappings>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_9bBUMXhREeuzuKS1expDjA" type="CONNECTOR" definitionId="bdm-generation" definitionVersion="1.0.0" implementationId="bdm-generation-impl" implementationVersion="1.3"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_9bBUMXhREeuzuKS1expDjA" type="CONNECTOR" definitionId="bdm-generation" definitionVersion="1.0.0" implementationId="bdm-generation-impl" implementationVersion="1.5"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUMnhREeuzuKS1expDjA" id="ACTOR_FILTER"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUM3hREeuzuKS1expDjA" id="CONNECTOR">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_W7hBIHuuEeu8P_RUzCg8Eg" id="bdm-generation-impl-1.3">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W7nHwHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="connector-bdm-generation-1.3.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W7o88HuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="jsr305-3.0.2.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W7rZMHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="failureaccess-1.0.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W7t1cHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W7yG4HuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="error_prone_annotations-2.3.4.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W71KMHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="HikariCP-3.4.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W-UdgHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="postgresql-42.2.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W-YH4HuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="guava-30.1-jre.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_W-n_gHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="checker-qual-3.5.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_XBBzQHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="j2objc-annotations-1.3.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_XBGEsHuuEeu8P_RUzCg8Eg" key="bdm-generation-impl -- 1.3" value="bdm-generation-impl-1.3.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Fpp00H_tEeu2F6_azVh7ZA" id="bdm-generation-impl-1.5">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FpvUYH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="connector-bdm-generation-1.5.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FpwigH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="jsr305-3.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FpxwoH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="failureaccess-1.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Fp33QH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Fp5FYH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="error_prone_annotations-2.3.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Fp6TgH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="HikariCP-3.4.5.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Fp8IsH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="postgresql-42.2.5.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FqC2YH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="guava-30.1-jre.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FqEEgH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="checker-qual-3.5.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FqF5sH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="j2objc-annotations-1.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_FqMAUH_tEeu2F6_azVh7ZA" key="bdm-generation-impl -- 1.5" value="bdm-generation-impl-1.5.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_9bBUO3hREeuzuKS1expDjA" id="GROOVY_SCRIPT"/>

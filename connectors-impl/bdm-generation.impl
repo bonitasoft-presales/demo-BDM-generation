@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
-  <implementationId>bdm-generation-impl</implementationId>
-  <implementationVersion>1.3</implementationVersion>
-  <definitionId>bdm-generation</definitionId>
-  <definitionVersion>1.0.0</definitionVersion>
-  <implementationClassname>org.bonitasoft.connectors.BdmGeneration</implementationClassname>
+  <implementationId>bdm-generation-impl</implementationId> <!-- Id of the implementation -->
+  <implementationVersion>1.5</implementationVersion> <!-- Version of the implementation, retrieved from the pom.xml at build time -> ${project.version} -->
+  <definitionId>bdm-generation</definitionId> <!-- Id of the definition implemented -->
+  <definitionVersion>1.0.0</definitionVersion> <!-- Version of the definition implemented -->
+  <implementationClassname>org.bonitasoft.connectors.BdmGeneration</implementationClassname> <!-- Path to the main implementation class -->
   <description>Default connector implementation</description>
-  <jarDependencies>
-    <jarDependency>connector-bdm-generation-1.3.jar</jarDependency>
-    <jarDependency>jsr305-3.0.2.jar</jarDependency>
-    <jarDependency>failureaccess-1.0.1.jar</jarDependency>
-    <jarDependency>listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</jarDependency>
-    <jarDependency>error_prone_annotations-2.3.4.jar</jarDependency>
-    <jarDependency>HikariCP-3.4.5.jar</jarDependency>
-    <jarDependency>postgresql-42.2.5.jar</jarDependency>
-    <jarDependency>guava-30.1-jre.jar</jarDependency>
-    <jarDependency>checker-qual-3.5.0.jar</jarDependency>
-    <jarDependency>j2objc-annotations-1.3.jar</jarDependency>
-  </jarDependencies>
+
+<!-- retrieved from the pom.xml at build time -->
+<jarDependencies>
+<jarDependency>connector-bdm-generation-1.5.jar</jarDependency>
+<jarDependency>jsr305-3.0.2.jar</jarDependency>
+<jarDependency>failureaccess-1.0.1.jar</jarDependency>
+<jarDependency>listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</jarDependency>
+<jarDependency>error_prone_annotations-2.3.4.jar</jarDependency>
+<jarDependency>HikariCP-3.4.5.jar</jarDependency>
+<jarDependency>postgresql-42.2.5.jar</jarDependency>
+<jarDependency>guava-30.1-jre.jar</jarDependency>
+<jarDependency>checker-qual-3.5.0.jar</jarDependency>
+<jarDependency>j2objc-annotations-1.3.jar</jarDependency>
+
+</jarDependencies>
+
 </implementation:connectorImplementation>
